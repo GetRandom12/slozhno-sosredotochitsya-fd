@@ -3,7 +3,7 @@
   и их переопределение под различные устройства
 */
 :root {
-  --bg-image: url("../images/cover-image.png");
+  --bg-image: url(../images/cover-image.png);
   --rec-display: block;
   --bg-color: rgba(0, 0, 40, 1);
   --title-color: rgba(219, 0, 255, 1);
@@ -12,7 +12,7 @@
   --text-color-question: rgba(255, 0, 112, 1);
   --title-title_card-color: rgba(0, 0, 40, 1);
   --nav_border-color: rgba(255, 0, 112, 1);
+  --nav_border-color_special: rgba(255, 0, 112, 0.4);
   --nav_text-color: rgba(255, 0, 112, 1);
   --link_border-color: rgba(241, 178, 206, 1);
-  
 }
