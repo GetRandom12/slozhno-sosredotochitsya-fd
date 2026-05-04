@@ -16,6 +16,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
   margin-bottom: 40px;
+  row-gap: 50px;
 }
 
 .header__theme-menu {
@@ -23,12 +24,16 @@
   display: grid;
   grid-row: 1/2;
   justify-self: end;
-  align-self: center;
+  align-self: end;
+  text-align: center;
 }
 
 
 
 .header__theme-menu-button {
+  width: 70px;
+  height: 26px;
+  
   color: var(--nav_text-color);
   background-color: transparent;
   border: 1px solid transparent;
@@ -37,7 +42,7 @@
   font-size: 18px;
   line-height: 18px;
   letter-spacing: 0%;
-  text-align: center;
+  padding: 1,5px 13px;
 }
 
 .header__theme-menu-button:hover {
@@ -51,7 +56,8 @@
 
 .header__theme-menu-list {
   display: grid;
-  gap: 25px;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
 .headline {
@@ -72,7 +78,7 @@
   color: var(--title-title_card-color);
   display: grid;
   grid-row: 3/4;
-  align-self: center;
+  align-self: start;
   justify-self: end;
   font-family: 'IBM Plex Mono', monospace;
   font-weight: bold;
@@ -237,7 +243,7 @@ letter-spacing: 0%;
 }
 
 .title-card_special {
-  margin-bottom: 9px;
+  margin-bottom: 10px;
 }
 
 .footer {
@@ -268,11 +274,14 @@ letter-spacing: 0%;
   grid-template-columns: repeat(2, 1fr); 
   grid-template-rows: repeat(3, 1fr);
   margin-bottom: 60px;
+  row-gap: 50px;
 }
   .header__theme-menu {
+    align-self: end;
     grid-column: 2/3;
     grid-row: 1/2;
     padding-right: 20px;
+    margin-bottom: 25px;
   }
   .headline {
     grid-column: 1/3;
@@ -285,7 +294,7 @@ letter-spacing: 0%;
     grid-column: 2/3;
     grid-row: 3/4;
     justify-self: end;
-    align-self: center;
+    align-self: start;
     margin: 0 20px 0 0;
   }
   .lamp_dark {
@@ -346,7 +355,7 @@ letter-spacing: 0%;
 }
 .advice_list {
   align-self: start;
-  justify-self: start;
+  justify-self: stretch;
 }
 .meditation {
   grid-column: 2/3;
@@ -376,7 +385,7 @@ letter-spacing: 0%;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, min-content);
   padding: 0 20px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   gap: 20px;
 }
 
@@ -447,9 +456,10 @@ letter-spacing: 0%;
     grid-column: 2/3;
     grid-row: 3/4;
     justify-self: center;
-    align-self: center;
-    margin: 0 20px 0 0;
+    align-self: start;
+    margin: 20px 20px 0 0;
   }
+
   .lamp_dark {
   top: 20px;
   left: 943px;
@@ -533,6 +543,7 @@ letter-spacing: 0%;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, min-content);
   padding: 0 20px;
+  margin-bottom: 60px;
 }
 .special_gallery {
   grid-column: 1/4;
