@@ -34,23 +34,25 @@
 }
 
 .header__theme-menu-button {
-  width: 70px;
-  height: 26px;
+  min-width: 70px;
+  min-height: 26px;
   border: 1px solid transparent;
-  padding:
-    1,
-    5px 13px;
+  padding: 5px 13px;
   color: var(--nav_text-color);
   font-family: "IBM Plex Mono", monospace;
   font-weight: normal;
   font-size: 18px;
   line-height: 18px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   background-color: transparent;
 }
 
 .header__theme-menu-button:hover {
   border: 1px solid var(--nav_border-color_special);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
 }
 
 .header__theme-menu-button:focus-visible {
@@ -74,7 +76,7 @@
   font-weight: bold;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   text-shadow: 4px 4px 0 var(--accent-color);
 }
 
@@ -88,8 +90,8 @@
   font-family: "IBM Plex Mono", monospace;
   font-weight: bold;
   font-size: 18px;
-  line-height: 23, 4px;
-  letter-spacing: 0%;
+  line-height: 23.4px;
+  letter-spacing: 0;
 }
 
 .title-decor {
@@ -100,14 +102,14 @@
 .lamp_dark {
   position: absolute;
   top: 10px;
-  left: 304px;
+  right: 40px;
   display: var(--rec-display);
   color: var(--nav_border-color);
   font-family: "IBM Plex Mono", monospace;
   font-weight: normal;
   font-size: 18px;
   line-height: 25px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   text-align: center;
 }
 
@@ -130,7 +132,7 @@
   content: "";
   position: absolute;
   top: 10px;
-  left: 339.96px;
+  right: 10px;
   width: 25px;
   height: 25px;
   border-color: var(--nav_border-color);
@@ -141,7 +143,7 @@
 .decorated-zone::after {
   content: "";
   position: absolute;
-  top: 633px;
+  bottom: 10px;
   left: 10px;
   width: 25px;
   height: 25px;
@@ -155,7 +157,7 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 23.4px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 
 .link {
@@ -166,10 +168,14 @@
 
 .link:hover {
   color: var(--link_border-color);
-  text-decoration: underline;
+  border-bottom: 1px solid var(--link_border-color);
 }
 
 .link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
   border: 1px solid var(--link_border-color);
   border-radius: 0%;
   outline: none;
@@ -184,7 +190,7 @@
   font-weight: bold;
   font-size: 18px;
   line-height: 23.4px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 
 .title-card {
@@ -192,7 +198,7 @@
   font-weight: bold;
   font-size: 18px;
   line-height: 23.4px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 
 .title-card_advice {
@@ -200,7 +206,7 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 23.4px;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 
 .concentration {
@@ -216,6 +222,9 @@
 .advice {
   display: grid;
   grid-template-rows: repeat(6, min-content);
+}
+.advice_list {
+  justify-self: stretch;
 }
 
 .card_style {
@@ -260,7 +269,7 @@
   font-weight: bold;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   text-shadow: 4px 4px 0 var(--accent-color);
 }
 
@@ -268,59 +277,47 @@
   .header {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    row-gap: 50px;
-    height: 100vh;
-    min-height: 1024px;
     margin-bottom: 60px;
   }
   .header__theme-menu {
     grid-column: 2/3;
     grid-row: 1/2;
-    align-self: end;
     margin-bottom: 25px;
     padding-right: 20px;
   }
   .headline {
     grid-column: 1/3;
     grid-row: 2/3;
-    align-self: center;
     margin: 0;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
   .title {
     grid-column: 2/3;
     grid-row: 3/4;
-    justify-self: end;
-    align-self: start;
     margin: 0 20px 0 0;
   }
   .lamp_dark {
     top: 20px;
-    left: 687px;
+    right: 50px;
   }
-
   .decorated-zone::before {
     top: 20px;
-    left: 723px;
+    right: 20px;
   }
-
   .decorated-zone::after {
-    top: 979px;
+    bottom: 20px;
     left: 20px;
   }
   .title-card_special {
     margin-bottom: 10px;
   }
-
   .card_style {
     margin-bottom: 80px;
     padding: 0 20px;
   }
-
   .concentration {
     grid-template-columns: 1fr 2fr;
     grid-template-rows: repeat(2, 1fr);
-    
   }
   .multitasking {
     grid-column: 2/3;
@@ -347,11 +344,10 @@
     grid-row: 4/5;
   }
   .advice {
-    grid-template-columns: 1fr minmax(472px, 2fr);
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: repeat(6, min-content);
   }
   .advice_list {
-    justify-self: stretch;
     align-self: start;
   }
   .meditation {
@@ -385,7 +381,6 @@
     margin-bottom: 60px;
     padding: 0 20px;
   }
-
   .special_gallery {
     grid-column: 1/4;
     grid-row: 1/2;
@@ -393,27 +388,22 @@
   .books {
     grid-column: 2/3;
     grid-row: 3/4;
-    object-fit: cover;
   }
   .ice-cream {
     grid-column: 3/4;
     grid-row: 2/4;
-    object-fit: cover;
   }
   .street {
     grid-column: 2/4;
     grid-row: 4/5;
-    object-fit: cover;
   }
   .sunset {
     grid-column: 1/3;
     grid-row: 2/3;
-    object-fit: cover;
   }
   .tape {
     grid-column: 1/2;
     grid-row: 3/5;
-    object-fit: cover;
   }
   .footer_title {
     margin: 0;
@@ -422,14 +412,7 @@
 }
 
 @media (width >= 1024px) {
-  .header {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    height: 100vh;
-    min-height: 768px;
-  }
   .header__theme-menu {
-    display: grid;
     grid-column: 1/3;
     grid-row: 1/1;
     justify-self: center;
@@ -438,44 +421,13 @@
     padding-top: 20px;
     padding-right: 0;
   }
-
   .header__theme-menu-list {
     display: inline-flex;
   }
-  .headline {
-    grid-column: 1/3;
-    grid-row: 2/3;
-    align-self: center;
-    margin: 0;
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  }
   .title {
-    grid-column: 2/3;
-    grid-row: 3/4;
     justify-self: center;
-    align-self: start;
     margin: 20px 20px 0 0;
   }
-
-  .lamp_dark {
-    top: 20px;
-    left: 943px;
-  }
-
-  .decorated-zone::before {
-    top: 20px;
-    left: 979px;
-  }
-
-  .decorated-zone::after {
-    top: 723px;
-    left: 20px;
-  }
-
-  .card_style{
-    padding: 0 20px;
-  }
-
   .concentration {
     grid-template-columns: 1fr 2fr;
     grid-template-rows: repeat(2, 1fr);
@@ -496,7 +448,6 @@
     grid-column: 1/2;
     grid-row: 2/3;
   }
-
   .food {
     grid-column: 2/3;
     grid-row: 2/3;
@@ -508,10 +459,6 @@
   .advice {
     grid-template-columns: 1fr 2fr;
     grid-template-rows: repeat(6, min-content);
-  }
-  .advice_list {
-    justify-self: stretch;
-    align-self: start;
   }
   .meditation {
     grid-column: 2/3;
@@ -532,48 +479,5 @@
   .reading {
     grid-column: 2/3;
     grid-row: 6/7;
-  }
-  .special {
-    grid-column: 1/2;
-    grid-row: 1/7;
-  }
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, min-content);
-    margin-bottom: 60px;
-    padding: 0 20px;
-  }
-  .special_gallery {
-    grid-column: 1/4;
-    grid-row: 1/2;
-  }
-  .books {
-    grid-column: 2/3;
-    grid-row: 3/4;
-    object-fit: cover;
-  }
-  .ice-cream {
-    grid-column: 3/4;
-    grid-row: 2/4;
-    object-fit: cover;
-  }
-  .street {
-    grid-column: 2/4;
-    grid-row: 4/5;
-    object-fit: cover;
-  }
-  .sunset {
-    grid-column: 1/3;
-    grid-row: 2/3;
-    object-fit: cover;
-  }
-  .tape {
-    grid-column: 1/2;
-    grid-row: 3/5;
-    object-fit: cover;
-  }
-  .footer_title {
-    margin: 0;
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }

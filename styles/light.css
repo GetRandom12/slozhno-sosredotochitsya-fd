@@ -13,8 +13,26 @@
   --text-color: rgba(53, 52, 48, 1);
   --text-color-question: rgba(53, 52, 48, 1);
   --title-title_card-color: rgba(53, 52, 48, 1);
-  --nav_border-color: rgba(50, 49, 45, 0.4);
+  --nav_border-color: rgba(50, 49, 45);
   --nav_border-color_special: rgba(50, 49, 45, 0.4);
   --nav_text-color: rgba(53, 52, 48, 1);
   --link_border-color: rgba(53, 52, 48, 1);
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+  --bg-image: url(../images/cover-image-light.png);
+  --rec-display: none;
+  --bg-color: rgba(255, 241, 247, 1);
+  --title-color: rgba(255, 194, 230, 1);
+  --accent-color: rgba(255, 141, 203, 1);
+  --text-color: rgba(53, 52, 48, 1);
+  --text-color-question: rgba(53, 52, 48, 1);
+  --title-title_card-color: rgba(53, 52, 48, 1);
+  --nav_border-color: rgba(50, 49, 45);
+  --nav_border-color_special: rgba(50, 49, 45, 0.4);
+  --nav_text-color: rgba(53, 52, 48, 1);
+  --link_border-color: rgba(53, 52, 48, 1);
+  }
 }
